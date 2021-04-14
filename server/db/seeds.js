@@ -7,16 +7,16 @@ db.hotel_bookings.insertMany(
     {
         name: "John Smith",
         email: "jsmith1@gmail.com",
-        status: "not checked in"
+        status: true
     },
     {
         name: "Mary Jones",
         email: "mj@gmail.com",
-        status: "not checked in"
+        status: false
     },
     {
         name: "Peter Parker",
         email: "pp@gmail.com",
-        status: "not checked in"
+        status: true
     }
 ]);

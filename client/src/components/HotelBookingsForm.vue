@@ -3,16 +3,13 @@
 		<h2>Add a Booking</h2>
 		<div class="formWrap">
 			<label for="name">Name:</label>
-			<input type="text" id="name" v-model="name" />
+			<input type="text" id="name" v-model="name" required/>
 		</div>
 		<div class="formWrap">
 			<label for="email">Email:</label>
-			<input type="email" id="email" v-model="email" />
+			<input type="email" id="email" v-model="email" required/>
 		</div>
-		<div class="formWrap">
-			<label for="status">Status:</label>
-			<input type="text" id="status" v-model="status" />
-		</div>
+
 
 		<input type="submit" value="Save" id="save"/>
 	</form>
@@ -27,7 +24,7 @@ export default {
 		return {
 			name: '',
 			email: '',
-			status: ''
+			status: false
 		}
 	},
 	methods: {
@@ -40,7 +37,6 @@ export default {
 
 			eventBus.$emit('submit-booking', payload);
 			this.name = this.email = '';
-			this.status = '';
 		}
 	}
 }

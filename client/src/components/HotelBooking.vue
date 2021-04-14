@@ -2,7 +2,7 @@
   <div class='hotel-booking'>
    <h2> {{booking.name}} </h2>
    <p> {{booking.email}} </p>
-   <p> {{booking.status}} </p>
+   <p :class="booking.status ? 'green' : 'red'"> {{booking.status}} </p>
 
    <button v-on:click='handleDelete(booking._id)'>Delete Booking</button>
   </div>
@@ -25,7 +25,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
-
+.green {
+    color:green;
+}
+.red {
+    color:red
+}
 </style>
