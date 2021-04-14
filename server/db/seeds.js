@@ -17,6 +17,6 @@ db.hotel_bookings.insertMany(
     {
         name: "Peter Parker",
         email: "pp@gmail.com",
-        status: true
+        status: false
     }
 ]);

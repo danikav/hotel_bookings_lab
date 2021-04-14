@@ -37,6 +37,18 @@ export default {
           this.bookings.splice(index, 1);
         });
     });
+
+    eventBus.$on('check-in', payload => {
+      const updateBooking = {
+        name: payload.name,
+        email: payload.email,
+        status: true
+      }
+      BookingService.checkIn(payload._id, updateBooking)
+      const index = this.bookings.findIndex(booking => booking._id === payload._id);
+      this.bookings.splice(index, 1, updateBooking)
+      })
+
   },
   methods: {
     fetchBookings() {
