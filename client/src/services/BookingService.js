@@ -1,12 +1,12 @@
-const baseURL = 'http://localhost:3000/api/hotel_bookings'
+const baseURL = 'http://localhost:3000/api/hotel_bookings/'
 
 export default {
-    getHotel_bookings(){
+    getBookings(){
         return fetch(baseURL)
-        .then( res = res.json())
+        .then( res => res.json())
     },
 
-    postHotel_bookings(payload){
+    postBookings(payload){
     return fetch(baseURL, {
         method: 'POST',
         body: JSON.stringify(payload),
@@ -15,7 +15,7 @@ export default {
     .then(res => res.json())
     },
 
-    deleteHotel_bookings(id) {
+    deleteBookings(id) {
         return fetch(baseURL + id, {
             method: 'DELETE'
         })
